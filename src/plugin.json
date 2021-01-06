@@ -5,6 +5,9 @@
 
   "metrics": true,
   "annotations": false,
+  "backend": true,
+  "executable": "gpx_archiver-appliance",
+  "alerting": true,
 
   "info": {
     "description": "Archiver Appliance Datasource",

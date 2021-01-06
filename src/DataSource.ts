@@ -100,7 +100,7 @@ export class DataSource extends DataSourceApi<AAQuery, AADataSourceOptions> {
       pvnamesArray =>
         new Promise((resolve, reject) => {
           const pvnames = _.slice(_.uniq(_.flatten(pvnamesArray)), 0, maxNumPVs);
-          let urls;
+          let urls: string[] = [];
 
           try {
             urls = _.map(pvnames, pvname =>

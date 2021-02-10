@@ -3,7 +3,7 @@ import split from 'lodash/split';
 import { min, max } from 'lodash';
 import { MutableDataFrame, getFieldDisplayName, DataSourceInstanceSettings, DataQueryRequest } from '@grafana/data';
 import { DataSource } from '../DataSource';
-import { AADataSourceOptions, TargetQuery, AAQuery } from 'types';
+import { AADataSourceOptions, TargetQuery, AAQuery } from '../types';
 
 const datasourceRequestMock = jest.fn().mockResolvedValue(createDefaultResponse());
 

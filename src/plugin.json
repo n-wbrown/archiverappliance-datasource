@@ -1,7 +1,7 @@
 {
   "$schema": "https://github.com/grafana/grafana/raw/master/docs/sources/developers/plugins/plugin.schema.json",
-  "name": "ArchiverAppliance",
-  "id": "sasaki77-archiverappliance-datasource",
+  "name": "ArchiverApplianceMod",
+  "id": "sasaki77-archiverappliance-datasourceEE",
   "type": "datasource",
 
   "metrics": true,

@@ -1,4 +1,4 @@
-name: action.yml
+name: on-push.yml
 on: [push]
 jobs:
   build-and-test-plugin:

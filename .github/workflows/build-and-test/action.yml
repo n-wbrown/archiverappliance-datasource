@@ -5,7 +5,6 @@ inputs:
     required: true
     default: 12
 runs:
-  using: "composite"
   steps:
     - name: Setup NodeJS environment
       uses: actions/setup-node@v1

@@ -1,0 +1,35 @@
+name: build-and-test-script.yml
+description: Build the plugin and run tests
+inputs:
+  node-version:
+    required: true
+    default: 12
+runs:
+  using: "composite"
+  steps:
+    - name: Setup NodeJS environment
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ inputs.node-version }}
+    - name: Setup Go environment
+      uses: actions/setup-go@v2
+    - name: Run Go tests using Mage
+      uses: magefile/mage-action@v1
+      with:
+        version: latest
+        args: vtest
+    - name: Build backend
+      uses: magefile/mage-action@v1
+      with:
+        version: latest
+        args: -v buildAll
+    - name: Install frontend tools
+      run: |
+        npm install -g yarn
+        yarn install
+    - name: List all Yarn packages
+      run: | 
+        yarn list
+    - name: Build frontend
+      run: |
+        yarn build

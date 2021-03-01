@@ -1,0 +1,23 @@
+name: on-push.yml
+on: [push]
+jobs:
+  build-and-test-plugin:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [12]
+        continue-on-error: [false]
+        include:
+          - node: 14
+            continue-on-error: true
+    continue-on-error: ${{ matrix.continue-on-error }}
+    steps: 
+      - name: Checkout Github repository
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+      - name: Build and Run Tests
+        uses: ./.github/workflows/build-and-test-script
+        with:
+          node-version: ${{ matrix.node }}
+        

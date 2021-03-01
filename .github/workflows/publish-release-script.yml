@@ -1,4 +1,4 @@
-name: publish-release.yml
+name: publish-release-script.yml
 on:
   push:
     tags:

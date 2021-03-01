@@ -1,4 +1,4 @@
-name: on-push.yml
+name: action.yml
 on: [push]
 jobs:
   build-and-test-plugin:
@@ -17,7 +17,7 @@ jobs:
         with:
           submodules: 'recursive'
       - name: Build and Run Tests
-        uses: ./.github/workflows/build-and-test-script.yml
+        uses: ./.github/workflows/build-and-test-script
         with:
           node-version: ${{ matrix.node }}
         
